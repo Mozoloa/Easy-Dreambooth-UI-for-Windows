@@ -29,6 +29,24 @@ function Install-Miniconda {
     $condaV = conda --version
     logger.info "Conda version : $condaV"
 }
+
+function Import-DBGitHub {
+    if (!(test-path $dreamboothFolder)) {
+        Set-Location $InstallPath
+        git clone https://github.com/JoePenna/Dreambooth-Stable-Diffusion
+        Set-Location $launcherFolder
+    }
+}
+
+function Update-DBGithub {
+    if (!(test-path $dreamboothFolder)) {
+        Import-DBGitHub
+        return
+    }
+    Set-Location $InstallPath
+    git pull https://github.com/JoePenna/Dreambooth-Stable-Diffusion 
+    Set-Location $launcherFolder
+}
 function Test-CondaInitialized {
     return $Env:CONDA_DEFAULT_ENV
 }
@@ -60,9 +78,16 @@ function Enable-Conda {
     }
 
     if (-not (Test-EnvironmentExists $envName)) {
-        logger.action "Creating Conda environment '$envName', this can take a while..."
-        conda env create --name $envName -f $envFile
+        logger.action "Creating Conda environment '$envName'"
+        conda create -y --name $envName git
         logger.success "Conda environment '$envName' created successfully."
+        conda activate $envName
+        
+    }
+
+    if (-not (test-path $dreamboothFolder)) {
+        logger.action "Cloning Dreambooth Repo"
+        Import-DBGitHub
     }
 
     $currentHash = Get-EnvironmentHash $envFile
@@ -82,29 +107,8 @@ function Enable-Conda {
     }
 
     logger.action "Activating environment '$envName'"
-    conda activate $envName
-    if (-Not (conda list git -n $envName | Select-String 'git')) {
-        conda install git -y
-    }
 }
 
-function Import-DBGitHub {
-    if (!(test-path $dreamboothFolder)) {
-        Set-Location $InstallPath
-        git clone https://github.com/JoePenna/Dreambooth-Stable-Diffusion
-        Set-Location $launcherFolder
-    }
-}
-
-function Update-DBGithub {
-    if (!(test-path $dreamboothFolder)) {
-        Import-DBGitHub
-        return
-    }
-    Set-Location $InstallPath
-    git pull https://github.com/JoePenna/Dreambooth-Stable-Diffusion 
-    Set-Location $launcherFolder
-}
 # Setup Reg Images
 Function Set-RegImages {
     param($class_word)

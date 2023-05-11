@@ -1,4 +1,4 @@
-Write-Output $PSScriptRoot
+Set-Location $PSScriptRoot
 Import-Module .\Functions.psm1 -Force
 . ".\shared.ps1"
 

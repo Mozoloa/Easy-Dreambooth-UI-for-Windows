@@ -1,3 +1,4 @@
+Set-Location $PSScriptRoot
 $ScriptPath = (Get-Item -Path "./UI.ps1" -Verbose).FullName
 $ShortcutPath = (Join-Path -Path (Get-Location) -ChildPath "EasyDreamboothUI.lnk")
 $IconPath = (Get-Item -Path "./media/ShortcutIcon.ico" -Verbose).FullName
@@ -17,4 +18,3 @@ $Shortcut.WorkingDirectory = (Get-Location).Path
 $Shortcut.Save()
 
 $Shell = New-Object -ComObject Shell.Application
-$Shell.Namespace(7).ParseName($ShortcutPath).InvokeVerb("taskbarpin")
