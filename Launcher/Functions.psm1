@@ -205,5 +205,6 @@ Function Start-Training {
     logger.action "Launching python with:`n $pythonCommand"
 
     # Launch Python script
+    Set-Location $dreamboothFolder
     Invoke-Expression $pythonCommand
 }

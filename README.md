@@ -1,3 +1,5 @@
+# ⚠️ This program is currently non functionnal, I'll try to fix it asap ⚠️ 
+
 ## 💙 Support Development 💙
 
 I'm doing this on my free time so if you enjoy this software & want to become a beta tester,
@@ -8,6 +10,8 @@ Please consider donating via : <a href='https://ko-fi.com/I3I4GUZP1' target='_bl
 
 # Index
 
+- [⚠️ This program is currently non functionnal, I'll try to fix it asap ⚠️](#️-this-program-is-currently-non-functionnal-ill-try-to-fix-it-asap-️)
+  - [💙 Support Development 💙](#-support-development-)
 - [Index](#index)
   - [ Introduction](#-introduction)
     - [**⚠️ WARNING**](#️-warning)
