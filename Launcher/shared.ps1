@@ -19,6 +19,8 @@ $train = $false
 
 $classes = @("none", "woman", "man", "person")
 
+
+
 # Ui general variables
 $backgroundColor = [System.Drawing.ColorTranslator]::FromHtml("#000000")
 $accentColor = [System.Drawing.ColorTranslator]::FromHtml("#ff9e36")

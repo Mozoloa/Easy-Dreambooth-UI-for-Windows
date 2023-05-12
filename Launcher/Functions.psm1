@@ -82,6 +82,7 @@ function Enable-Conda {
         conda create -y --name $envName git
         logger.success "Conda environment '$envName' created successfully."
         conda activate $envName
+        pip install taming-transformers-rom1504 
         
     }
 
@@ -205,6 +206,5 @@ Function Start-Training {
     logger.action "Launching python with:`n $pythonCommand"
 
     # Launch Python script
-    Set-Location $dreamboothFolder
     Invoke-Expression $pythonCommand
 }

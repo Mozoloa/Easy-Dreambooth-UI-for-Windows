@@ -69,7 +69,7 @@ $ValidateScript = {
 
 $MainForm = New-MainForm `
     -Header `
-    -HeaderImage ".\media\Title.png" `
+    -HeaderImage "$launcherFolder\media\Title.png" `
     -TopBar `
     -Validate "Train" `
     -ValidateScript $ValidateScript
@@ -155,6 +155,7 @@ logger.pop "UI Starting"
 $MainForm.ShowDialog()
 
 if ($Global:train -eq $true) {
+    Set-Location $dreamboothFolder
     Start-Training $settings
     Read-Host "Press any key to continue..."
     if (Test-Path $trainedModelsDir) {
