@@ -1,5 +1,3 @@
-# ⚠️ This program is currently non functionnal, I'll try to fix it asap ⚠️ 
-
 ## 💙 Support Development 💙
 
 I'm doing this on my free time so if you enjoy this software & want to become a beta tester,
@@ -10,8 +8,6 @@ Please consider donating via : <a href='https://ko-fi.com/I3I4GUZP1' target='_bl
 
 # Index
 
-- [⚠️ This program is currently non functionnal, I'll try to fix it asap ⚠️](#️-this-program-is-currently-non-functionnal-ill-try-to-fix-it-asap-️)
-  - [💙 Support Development 💙](#-support-development-)
 - [Index](#index)
   - [ Introduction](#-introduction)
     - [**⚠️ WARNING**](#️-warning)
@@ -44,13 +40,16 @@ I originally created this fork to simplify local dreambooth face training on win
 
 
 # <a name="setup"></a> Setup
-1. If you already have git, clone this repo anywhere you want (***you'll also be able to update it with git pull later***) then skip to **4.**
-2. If you don't have git, download this project by clicking on `Code` then `Download ZIP` in the upper right corner and extract it in your folder of choice
-3. ![UI](./readme-images/dl.png)
-4.  In the project folder go into the ***Launcher*** Folder and right click ***createShortcut.ps1*** and select **"Run with PowerShell"** to create the ***EasyDreamboothUI*** shortcut
-5.  (optional) After the shortcut is created right-click it, and select **"Pin to taskbar"**
-6.  Launch the program from the shortcut (optionaly from your taskbar)
-7.  This will launch a powershell window before the UI, Wait for it to install all that's needed, this can take a while
+1. Download and install [miniconda](https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe), during the install don't forger to add conda to PATH
+2. Download [GIT](https://github.com/git-for-windows/git/releases/download/v2.40.0.windows.1/Git-2.40.0-64-bit.exe) and don't forget to add it to PATH during the install as well
+3. Open windows explorer and navigate to where you want to install this UI
+4. Click in the explorer address bar from within this folder, delete the existing path and type ***powershell*** and press `Enter`
+5. In the Powershell terminal, type `git clone https://github.com/Mozoloa/Easy-Dreambooth-Windows`, 
+6. Open the newly created folder named ***Easy-Dreambooth-Windows***
+7. Right click ***createShortcut.ps1*** and select **"Run with PowerShell"** to create the ***EasyDreamboothUI*** shortcut
+8. (optional) After the shortcut is created right-click it, and select **"Pin to taskbar"**
+9. Launch the program (optionaly from your taskbar !)
+10. This will launch a powershell window before the UI, Wait for it to install all that's needed, this can take a while
 
 # <a name="setting-things-up"></a> Setting things up in the UI
 ***⚠️ During all the steps below, do not use folders with weird special characters in their path, this will break things and I don't plan on actively fixing potential weird paths***

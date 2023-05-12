@@ -1,11 +1,9 @@
 Set-Location $PSScriptRoot
-Import-Module .\Functions.psm1 -Force
-. ".\shared.ps1"
+Import-Module .\ui-files\Functions.psm1 -Force
+. ".\ui-files\shared.ps1"
 
 # Env Setup
-Install-Miniconda
 Enable-Conda
-Import-DBGitHub
 
 $settings = @{
     project_name          = ""
@@ -69,7 +67,7 @@ $ValidateScript = {
 
 $MainForm = New-MainForm `
     -Header `
-    -HeaderImage ".\media\Title.png" `
+    -HeaderImage ".\ui-files\media\Title.png" `
     -TopBar `
     -Validate "Train" `
     -ValidateScript $ValidateScript

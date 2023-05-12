@@ -3,19 +3,20 @@ Add-Type -AssemblyName System.Drawing
 Add-Type -AssemblyName PresentationFramework
 Add-Type -AssemblyName Microsoft.VisualBasic
 Set-StrictMode -Version 2
-Import-Module .\logger.psm1 -Force -Global -Prefix "logger."
-. ".\EmpireUI\EmpireUI.ps1"
+Import-Module .\ui-files\logger.psm1 -Force -Global -Prefix "logger."
+. ".\ui-files\EmpireUI\EmpireUI.ps1"
 
 # General Variables
-$InstallPath = (get-item $PSScriptRoot ).parent.FullName
-$dreamboothFolder = "$InstallPath\Dreambooth-Stable-Diffusion"
-$launcherFolder = "$InstallPath\launcher"
-$settingsPath = "$launcherFolder\settings.json"
+$dreamboothFolder = Split-Path $PSScriptRoot -Parent
 $tempFolder = (Get-Item -Path env:\temp).Value
 $PATH = [Environment]::GetEnvironmentVariable("PATH", "Machine")
 $gitLocation = "$dreamboothFolder\regularization_gits"
 $trainedModelsDir = "$dreamboothFolder\trained_models"
 $train = $false
+
+
+$InstallPath = (get-item $PSScriptRoot ).parent.FullName
+$settingsPath = ".\settings.json"
 
 $classes = @("none", "woman", "man", "person")
 
