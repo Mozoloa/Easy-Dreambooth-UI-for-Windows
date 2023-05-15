@@ -131,7 +131,7 @@ Function Start-Training {
     }
     else {
         $settings.regularization_images = Set-RegImages $settings.class_word
-        $pythonArgs['regularization_images'] = $settings.regularization_images
+        $pythonArgs['regularization_images'] = "$($settings.regularization_images)"
         $pythonArgs['class_word'] = $settings.class_word
         $reguMsg = "Regularization of `"$($settings.class_word)`" with images from $($settings.regularization_images)"
     }
